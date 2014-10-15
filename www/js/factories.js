@@ -4,7 +4,7 @@ angular.module('starter.factories', [])
   return {
     getMeetups: function(options) {
        var  deferred = $q.defer(),
-            rad = 100 - parseInt(options.radius, 10);
+            rad = parseInt(options.radius, 10);
        $http.get('https://api.meetup.com/2/open_events?status=upcoming&radius=' + rad.toFixed(1)  + '&and_text=False&limited_events=False&desc=False&offset=0&photo-host=public&format=json&lat=' + options.lat + '&page=20&lon=' + options.lon + '8&sign=true&key=462b4e6f86d52794c42581c3a3c6072')
          .success(function(data) {
             deferred.resolve(data);
