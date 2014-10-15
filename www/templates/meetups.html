@@ -6,9 +6,10 @@
     <ion-refresher
       on-refresh="loadMeetups()">
     </ion-refresher>
-    <ion-list >
+    <i class="icon ion-loading-c loader" ng-if="!meetups.length"></i>
+    <ion-list can-swipe="true">
       <ion-item ng-repeat="meetup in meetups" href="#/app/meetups/{{meetup.id}}">
-        {{meetup.name}}
+        <h2>{{meetup.name}}</h2>
         <ion-option-button class="twitterBlue"
                            ng-click="share(meetup)">
           Tweet
