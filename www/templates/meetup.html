@@ -1,0 +1,16 @@
+<ion-view title="{{meetup.group.name}}">
+  <ion-content class="has-header meetup">
+    <img class="full-image" ng-src="{{group.group_photo.photo_link}}">
+    <h3><a ng-href="{{meetup.event_url}}" target="_blank">{{meetup.name}}</a></h3>
+    <div class="res">
+      <div class="pos">
+        <i class="icon ion-thumbsup"></i>
+        {{meetup.yes_rsvp_count}}
+      </div>
+    </div>
+    <div class="desc" ng-bind-html="meetup.description"></div>
+    <ui-gmap-google-map ng-if="meetup" center="{latitude: meetup.venue.lat,longitude: meetup.venue.lon}" zoom="13">
+      <ui-gmap-marker coords="{latitude: meetup.venue.lat,longitude: meetup.venue.lon}" idkey="1"></ui-gmap-marker>
+    </ui-gmap-google-map>
+  </ion-content>
+</ion-view>
