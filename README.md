@@ -1,6 +1,6 @@
-Presentation of ionic framework for local javascript group
+#Presentation of ionic framework for local javascript group
 Forked ionic presentation can be found [here](http://dinodsaurus.github.io/ionic-present/#/)
-# Setup
+## Setup
 ![Ionic GUI](http://imageshack.com/a/img674/4946/JTOZGZ.jpg)
 To get going with this app you will need to:
 ### Install cordova and ionic
