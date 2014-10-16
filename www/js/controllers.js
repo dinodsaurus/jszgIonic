@@ -21,11 +21,11 @@ angular.module('starter.controllers', [])
       $scope.meetups = data.results;
       $scope.$broadcast('scroll.refreshComplete');
     });
-  }
+  };
   $scope.share = function (meetup) {
-    var href="http://twitter.com/share?text=" + meetup.name + "&url=" + meetup.link;
-    window.open(href, '_blank', 'location=yes');
-  }
+    var href="http://twitter.com/share?text=" + meetup.name + "&url=" + meetup.event_url;
+    var ref = window.open(href, '_blank', 'location=yes');
+  };
   if($scope.geolocation.lat){
     var loc = $scope.geolocation.pos;
     $scope.loadMeetups();
@@ -44,8 +44,8 @@ angular.module('starter.controllers', [])
     $scope.meetup.zoom = 12;
     MeetupFac.getGroup(data.group.id).then(function (data) {
       $scope.group = data.results[0];
-    })
-  })
+    });
+  });
 })
 .controller('SettingsCtrl', function($ionicViewService, $scope, $state) {
   $scope.done = function () {
@@ -53,5 +53,5 @@ angular.module('starter.controllers', [])
        disableBack: true
     });
     $state.go('app.meetups');
-  }
+  };
 });

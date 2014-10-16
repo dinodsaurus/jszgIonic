@@ -7822,8 +7822,9 @@ $ios-transition-box-shadow-end: -200px 0px 200px rgba(0,0,0,0.15), -5px 0px 5px 
 .loader {
   font-size: 70px;
   position: absolute;
-  left: 40%;
-  margin-top: 20%; }
+  left: 50%;
+  margin-top: 20%;
+  margin-left: -35px; }
 
 .meetup {
   padding: 0 10px; }

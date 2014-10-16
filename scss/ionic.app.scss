@@ -27,8 +27,9 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
 .loader{
   font-size: 70px;
   position: absolute;
-  left: 40%;
+  left: 50%;
   margin-top: 20%;
+  margin-left:-35px;
 }
 .meetup{
   padding:0 10px;
