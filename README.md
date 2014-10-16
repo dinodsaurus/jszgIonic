@@ -1,5 +1,5 @@
 # Setup
-![Ionic GUI](http://ionicframework.com/img/gui_screen.jpg)
+![Ionic GUI](http://imageshack.com/a/img743/5835/dExRcq.png)
 To get going with this app you will need to:
 ### Install cordova and ionic
 
@@ -16,7 +16,7 @@ $ bower install && npm install
 ```bash
 $ ionic platform add ios
 ```
-### Replace Resources folder inside your platforms folder with Resources found in the root of this project
+Replace Resources folder inside your platforms folder with Resources found in the root of this project
 ### Serve or build your project
 ```bash
 $ ionic serve
