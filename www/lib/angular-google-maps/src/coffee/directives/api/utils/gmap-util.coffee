@@ -1,6 +1,12 @@
 angular.module("google-maps.directives.api.utils".ns())
 .service "GmapUtil".ns(), ["Logger".ns(), "$compile", (Logger, $compile) ->
+  DEFAULT_EVENT_OPTS =
+    debounceMs: 5
   #BEGIN Private Methods
+  debounce = (fn, delay = DEFAULT_EVENT_OPTS.debounceMs) ->
+    # true in debounce is the key to making the function execute on this iteration w/ a delay
+    _.debounce  fn , delay, true
+
   getLatitude = (value) ->
     if Array.isArray(value) and value.length is 2
       value[1]
@@ -72,7 +78,7 @@ angular.module("google-maps.directives.api.utils".ns())
       if gMarker? and !options?.pixelOffset?
         #if we have a marker, center the window above
         if !options.boxClass?
-          options.pixelOffset = height:-40, width:0
+          # options.pixelOffset = height:-40, width:0 (using anchor)
         else #it is an infoBox center it below
           options.pixelOffset = height:0, width:-2
       options
@@ -232,5 +238,10 @@ angular.module("google-maps.directives.api.utils".ns())
   fitMapBounds: (map, bounds) ->
     map.fitBounds bounds
 
+
+  debounce: debounce
+
+  debounceNow:(fn, delay = DEFAULT_EVENT_OPTS.debounceMs) ->
+    debounce(fn, delay = DEFAULT_EVENT_OPTS.debounceMs)()
   #end Public Methods
 ]

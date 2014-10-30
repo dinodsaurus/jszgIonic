@@ -6,7 +6,8 @@
     <ion-refresher
       on-refresh="loadMeetups()">
     </ion-refresher>
-    <i class="icon ion-loading-c loader" ng-if="!meetups.length"></i>
+    <i class="icon ion-loading-c loader" ng-hide="noMeetups" ng-if="!meetups.length"></i>
+    <h4 class="error" ng-if="noMeetups">There are no meetups nearby</h4>
     <ion-list can-swipe="true">
       <ion-item ng-repeat="meetup in meetups" href="#/app/meetups/{{meetup.id}}">
         <h2>{{meetup.name}}</h2>

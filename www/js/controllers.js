@@ -2,6 +2,8 @@ angular.module('starter.controllers', [])
 
 .controller('AppCtrl', function($scope, $timeout, $log) {
   $scope.geolocation = {};
+  $scope.helper = {};
+  $scope
   ionic.Platform.ready(function(){
     navigator.geolocation.getCurrentPosition(function(pos) {
      $scope.geolocation.lat = pos.coords.latitude;
@@ -9,16 +11,18 @@ angular.module('starter.controllers', [])
      $scope.geolocation.radius = "25";
      $scope.$broadcast('geolocation.complete');
     }, function(error) {
-     $log.error('Unable to get location: ' + error.message);
+      $scope.helper.error = "noGPS";
+      $log.error('Unable to get location: ' + error.message);
     });
   });
 })
 
 .controller('MeetupsCtrl', function($scope, $log, MeetupFac) {
-  $scope.meetups = [];
   $scope.loadMeetups = function () {
     MeetupFac.getMeetups($scope.geolocation).then(function (data) {
       $scope.meetups = data.results;
+      if(!data.results.length)
+        $scope.noMeetups = true;
       $scope.$broadcast('scroll.refreshComplete');
     });
   };

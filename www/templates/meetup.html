@@ -10,7 +10,7 @@
       </div>
     </div>
     <div class="desc" ng-bind-html="meetup.description"></div>
-    <ui-gmap-google-map ng-if="meetup.loc" center="meetup.loc" zoom="meetup.zoom">
+    <ui-gmap-google-map ng-if="meetup.loc.latitude" center="meetup.loc" zoom="meetup.zoom">
       <ui-gmap-marker coords="meetup.loc" idkey="meetup.id"></ui-gmap-marker>
     </ui-gmap-google-map>
   </ion-content>

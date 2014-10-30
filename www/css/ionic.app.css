@@ -7826,6 +7826,9 @@ $ios-transition-box-shadow-end: -200px 0px 200px rgba(0,0,0,0.15), -5px 0px 5px 
   margin-top: 20%;
   margin-left: -35px; }
 
+.error {
+  text-align: center; }
+
 .meetup {
   padding: 0 10px; }
   .meetup img {
