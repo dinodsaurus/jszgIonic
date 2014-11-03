@@ -7820,11 +7820,11 @@ $ios-transition-box-shadow-end: -200px 0px 200px rgba(0,0,0,0.15), -5px 0px 5px 
   color: white; }
 
 .loader {
-  font-size: 70px;
   position: absolute;
-  left: 50%;
+  width: 100%;
   margin-top: 20%;
-  margin-left: -35px; }
+  font-size: 70px;
+  text-align: center; }
 
 .error {
   text-align: center; }
