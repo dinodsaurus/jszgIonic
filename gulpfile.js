@@ -6,10 +6,20 @@ var sass = require('gulp-sass');
 var minifyCss = require('gulp-minify-css');
 var rename = require('gulp-rename');
 var sh = require('shelljs');
+var shell = require('gulp-shell');
 
 var paths = {
   sass: ['./scss/**/*.scss']
 };
+
+gulp.task('docs', shell.task([
+  'node_modules/jsdoc/jsdoc.js '+
+  '-c node_modules/angular-jsdoc/conf.json '+   // config file
+  '-t node_modules/angular-jsdoc/template '+    // template file
+  '-d docs '+                             // output directory
+  './README.md ' +  
+  '-r www/js'                              // source code directory
+  ]));
 
 gulp.task('default', ['sass']);
 
